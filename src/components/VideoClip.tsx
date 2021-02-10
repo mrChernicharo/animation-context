@@ -1,5 +1,5 @@
 import React, { createRef, useContext, useEffect } from 'react';
-import VideoContext from './VideoContext';
+import VideoContext from '../contexts/VideoContext';
 
 const videoStyles = {
   marginTop: '100px',

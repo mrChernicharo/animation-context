@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
-import VideoContext from './VideoContext';
+import VideoContext from '../contexts/VideoContext';
 
 interface IHeaderProps {
   children;

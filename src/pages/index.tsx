@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Header from '../components/Header';
-import VideoContext from '../components/VideoContext';
+import VideoContext from '../contexts/VideoContext';
 import VideoClip from '../components/VideoClip';
 import React, { useState } from 'react';
 import Controls from '../components/Controls';
@@ -21,7 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <VideoContext.Provider value={{ status, color, togglePlayPause, toggleColor }}>
+      <VideoContext.Provider value={{ status, color, toggleColor, togglePlayPause }}>
         <header>
           <Header>
             <h1>Header</h1>

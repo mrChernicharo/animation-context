@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import VideoContext from './VideoContext';
+import VideoContext from '../contexts/VideoContext';
 
 const styles = {
   width: '100px',
