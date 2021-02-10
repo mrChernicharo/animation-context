@@ -7,16 +7,17 @@ import Controls from '../components/Controls';
 
 export default function Home() {
   const [status, setStatus] = useState('paused');
+  const [color, setColor] = useState('red');
   const togglePlayPause = () => setStatus(status === 'playing' ? 'paused' : 'playing');
-
+  const toggleColor = (color: string) => setColor(color);
   return (
     <div>
       <Head>
-        <title>Next Beat Maker</title>
+        <title>Next Context</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <VideoContext.Provider value={{ status, togglePlayPause }}>
+      <VideoContext.Provider value={{ status, color, togglePlayPause, toggleColor }}>
         <header>
           <Header>
             <h1>Header</h1>

@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
+import VideoContext from './VideoContext';
 
 interface IHeaderProps {
   children;
@@ -11,8 +12,10 @@ interface IToolbarProps {
 }
 
 export default function Header({ children }: IHeaderProps) {
+  const { color } = useContext(VideoContext);
+
   return (
-    <Toolbar>
+    <Toolbar border={color} color={color}>
       <div>{children}</div>
       <div></div>
     </Toolbar>
@@ -21,9 +24,12 @@ export default function Header({ children }: IHeaderProps) {
 
 const Toolbar = styled.div`
   width: 100vw;
-  height: 60px;
-  border: 1px solid;
-  display: flex;
+  border: 1px solid ${(props: IToolbarProps) => props.border};
+  color: ${props => props.color};
+  display: grid;
+  text-align: center;
+
+  /* display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; */
 `;

@@ -3,7 +3,7 @@ import VideoContext from './VideoContext';
 
 const videoStyles = {
   marginTop: '100px',
-  width: '50vw',
+  width: '80vw',
 };
 const VideoClip = () => {
   const { status } = useContext(VideoContext);
@@ -16,7 +16,7 @@ const VideoClip = () => {
     } else if (status === 'paused') {
       vidRef.current.pause();
     }
-  });
+  }, [status]);
 
   return (
     <video style={videoStyles} controls ref={vidRef}>

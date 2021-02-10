@@ -1,7 +1,4 @@
-import React, { useState } from 'react';
-import VideoClip from '../components/VideoClip';
-import Controls from '../components/Controls';
-import Home from '.';
+import Home from './index';
 
 function App() {
   return (
