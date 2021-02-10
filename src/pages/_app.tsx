@@ -6,9 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <AppContext.Provider value={appState}>
-        <Component {...pageProps} />
-      </AppContext.Provider>
+      <AppContext.Consumer>{appState => <Component {...pageProps} />}</AppContext.Consumer>
     </>
   );
 }
