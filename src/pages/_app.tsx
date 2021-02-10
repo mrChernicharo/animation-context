@@ -1,13 +1,6 @@
 import React from 'react';
 import GlobalStyle from '../styles/GlobalStyle';
-
-const appState = {
-  playing: false,
-  interval: 60,
-  color: 'red',
-};
-
-const AppContext = React.createContext(appState);
+import { AppContext, initialState as appState } from '../components/AppContext';
 
 function MyApp({ Component, pageProps }) {
   return (
