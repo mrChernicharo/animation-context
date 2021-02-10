@@ -5,6 +5,7 @@ const VideoContext = createContext({
   color: 'red',
   togglePlayPause: () => {},
   toggleColor: color => {},
+  updateStatus: status => {},
 });
 
 export default VideoContext;

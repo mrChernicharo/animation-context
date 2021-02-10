@@ -14,6 +14,7 @@ export default function Home() {
   const [color, setColor] = useState('red');
   const togglePlayPause = () => setStatus(status === 'playing' ? 'paused' : 'playing');
   const toggleColor = (color: string) => setColor(color);
+  const updateStatus = (status: string) => setStatus(status);
   return (
     <div>
       <Head>
@@ -21,7 +22,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <VideoContext.Provider value={{ status, color, toggleColor, togglePlayPause }}>
+      <VideoContext.Provider value={{ status, color, toggleColor, updateStatus, togglePlayPause }}>
         <header>
           <Header>
             <h1>Header</h1>
