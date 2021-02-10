@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
-import { AppContext } from '../components/AppContext';
 
 interface IHeaderProps {
   children;
@@ -12,17 +11,11 @@ interface IToolbarProps {
 }
 
 export default function Header({ children }: IHeaderProps) {
-  // const context = useContext(AppContext);
-
   return (
-    <AppContext.Consumer>
-      {context => (
-        <Toolbar border={context.color} color={context.color}>
-          <div>{children}</div>
-          <div>context color: {context.color}</div>
-        </Toolbar>
-      )}
-    </AppContext.Consumer>
+    <Toolbar>
+      <div>{children}</div>
+      <div></div>
+    </Toolbar>
   );
 }
 
@@ -33,7 +26,4 @@ const Toolbar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  border-color: ${(props: IToolbarProps) => props.border};
-  color: ${(props: IToolbarProps) => props.color};
 `;

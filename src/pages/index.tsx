@@ -1,31 +1,35 @@
 import Head from 'next/head';
 import Header from '../components/Header';
-import Canvas from '../components/Canvas';
-import { AppContext } from '../components/AppContext';
+import VideoContext from '../components/VideoContext';
+import VideoClip from '../components/VideoClip';
+import React, { useState } from 'react';
+import Controls from '../components/Controls';
 
 export default function Home() {
+  const [status, setStatus] = useState('paused');
+  const togglePlayPause = () => setStatus(status === 'playing' ? 'paused' : 'playing');
+
   return (
-    <AppContext.Consumer>
-      {appState => (
-        <div>
-          <Head>
-            <title>Next Beat Maker</title>
-            <link rel="icon" href="/favicon.ico" />
-          </Head>
+    <div>
+      <Head>
+        <title>Next Beat Maker</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-          <header>
-            <Header>
-              <h1>Header</h1>
-            </Header>
-          </header>
+      <VideoContext.Provider value={{ status, togglePlayPause }}>
+        <header>
+          <Header>
+            <h1>Header</h1>
+          </Header>
+        </header>
 
-          <main>
-            <Canvas />
-          </main>
+        <main>
+          <VideoClip />
+          <Controls />
+        </main>
+      </VideoContext.Provider>
 
-          <footer></footer>
-        </div>
-      )}
-    </AppContext.Consumer>
+      <footer></footer>
+    </div>
   );
 }

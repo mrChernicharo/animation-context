@@ -1,14 +1,14 @@
-import React from 'react';
-import GlobalStyle from '../styles/GlobalStyle';
-import { AppContext, initialState as appState } from '../components/AppContext';
+import React, { useState } from 'react';
+import VideoClip from '../components/VideoClip';
+import Controls from '../components/Controls';
+import Home from '.';
 
-function MyApp({ Component, pageProps }) {
+function App() {
   return (
-    <>
-      <GlobalStyle />
-      <AppContext.Consumer>{appState => <Component {...pageProps} />}</AppContext.Consumer>
-    </>
+    <div className="App">
+      <Home />
+    </div>
   );
 }
 
-export default MyApp;
+export default App;
