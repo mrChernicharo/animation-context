@@ -21,4 +21,9 @@ export default function Canvas() {
 export const Container = styled.div`
   height: calc(100vh - 60px);
   border: 1px solid ${(props: IContainerProps) => props.border};
+
+  header {
+    div {
+    }
+  }
 `;

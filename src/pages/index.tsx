@@ -16,7 +16,6 @@ export default function Home() {
           <header>
             <Header>
               <h1>Header</h1>
-              <div>context color: {appState.color}</div>
             </Header>
           </header>
 
