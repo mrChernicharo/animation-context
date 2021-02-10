@@ -4,8 +4,12 @@ import VideoContext from '../components/VideoContext';
 import VideoClip from '../components/VideoClip';
 import React, { useState } from 'react';
 import Controls from '../components/Controls';
+import Navigation from '../components/Navigation';
+import { useRouter } from 'next/router';
+import Canvas from './canvas';
 
 export default function Home() {
+  const { route } = useRouter();
   const [status, setStatus] = useState('paused');
   const [color, setColor] = useState('red');
   const togglePlayPause = () => setStatus(status === 'playing' ? 'paused' : 'playing');
@@ -22,11 +26,18 @@ export default function Home() {
           <Header>
             <h1>Header</h1>
           </Header>
+          <Navigation />
         </header>
 
         <main>
-          <VideoClip />
-          <Controls />
+          {route === '/' ? (
+            <>
+              <VideoClip />
+              <Controls />
+            </>
+          ) : (
+            <Canvas />
+          )}
         </main>
       </VideoContext.Provider>
 

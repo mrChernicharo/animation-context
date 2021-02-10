@@ -11,6 +11,7 @@ const VideoClip = () => {
   const vidRef = createRef<HTMLVideoElement>();
 
   useEffect(() => {
+    console.log(vidRef.current.duration);
     if (status === 'playing') {
       vidRef.current.play();
     } else if (status === 'paused') {
